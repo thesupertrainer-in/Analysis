@@ -192,6 +192,13 @@ def generate_report(sections: dict, out_path: str) -> str:
         main_refs=main_refs,
     )
 
+    # ── Force recalculation on open ────────────────────────────────────────
+    # openpyxl writes formulas but never their cached results, so every
+    # calculated cell is empty until something evaluates it.  Setting this flag
+    # makes Excel/Calc do a full recalculation the moment the file opens,
+    # instead of showing blanks to whoever opens it first.
+    wb.calculation.fullCalcOnLoad = True
+
     # ── Write file ─────────────────────────────────────────────────────────
     out_path = os.path.abspath(out_path)
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
