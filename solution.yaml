@@ -1,0 +1,13 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: dmlt-consolidation-3e4f0
+  version: 1.0.0
+  description: >
+    AI-powered DMLT consolidation study assistant — ingests SAP system JSON extracts,
+    runs deterministic calculations, applies AI analysis, and generates Excel reports.
+
+assets:
+  - ref: ./assets/dmlt-consolidation-cap/asset.yaml
+  - ref: ./assets/dmlt-consolidation-agent/asset.yaml

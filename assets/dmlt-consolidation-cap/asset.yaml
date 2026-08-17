@@ -1,0 +1,39 @@
+apiVersion: asset.sap/v1
+kind: Asset
+
+metadata:
+  name: dmlt-consolidation-cap
+  version: 1.0.0
+  description: >
+    CAP Node.js backend with React UI for DMLT file upload, run management,
+    and Excel report download.
+
+type: cap-app
+
+container:
+  buildPath: .
+  port: 4004
+
+provides:
+  protocols:
+    - odata-v4
+    - rest
+
+probes:
+  startup:
+    path: /health
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 18
+  liveness:
+    path: /health
+    initialDelaySeconds: 15
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 3
+  readiness:
+    path: /health
+    initialDelaySeconds: 5
+    periodSeconds: 5
+    timeoutSeconds: 3
+    failureThreshold: 3

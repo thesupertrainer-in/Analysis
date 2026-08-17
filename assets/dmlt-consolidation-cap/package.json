@@ -1,0 +1,47 @@
+{
+  "name": "dmlt-consolidation-cap",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "@cap-js/hana": "^3",
+    "@sap/cds": "^10",
+    "@sap/xssec": "^4",
+    "multer": "^2.2.0"
+  },
+  "devDependencies": {
+    "@cap-js/cds-test": "^1.0.2",
+    "@cap-js/sqlite": "^3",
+    "@sap/cds-dk": "^10.0.7",
+    "jest": "^30.4.2"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "build": "npm run build --workspace=app/react-ui && cds build --production",
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js --testEnvironment node --forceExit --coverage"
+  },
+  "private": true,
+  "cds": {
+    "[development]": {
+      "requires": {
+        "auth": "dummy"
+      }
+    },
+    "[production]": {
+      "folders": {
+        "app": "app/react-ui/dist"
+      }
+    },
+    "server": {
+      "body_parser": {
+        "limit": "100mb"
+      }
+    }
+  },
+  "workspaces": [
+    "app/react-ui"
+  ],
+  "jest": {
+    "transform": {},
+    "extensionsToTreatAsEsm": []
+  }
+}
