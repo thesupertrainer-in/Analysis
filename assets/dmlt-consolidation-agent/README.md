@@ -38,6 +38,30 @@ CAP Backend (POST /invoke)
 |------|-------|--------|
 | `generate_excel_report` | all sections | Base64-encoded 9-sheet .xlsx |
 
+## Layout
+
+```
+app/
+├── calc_engine.py        deterministic calculation engine (stdlib only)
+├── tools/
+│   ├── calc_tools.py     thin LangChain wrappers over calc_engine
+│   └── excel_tool.py     launches the generator as a subprocess
+└── excel_generator/      Excel report generator
+    ├── generate_report.py    CLI entry point
+    ├── dmlt_calc.py          loads ../calc_engine.py — one shared engine
+    ├── verify_report.py      recalculation / formula-error checker
+    ├── styles.py
+    └── sheets/               one module per worksheet
+```
+
+The generator lives **inside `app/`** on purpose. `asset.yaml` builds this
+asset with `buildPath: "."`, so the Docker build context is this directory —
+anything outside it cannot be `COPY`ed into the image. Keeping the generator
+under `app/` means the Dockerfile's `COPY app/ ./app/` ships it, and
+`excel_tool.py` resolves the same relative path locally and in the container.
+Moving it back out to a sibling directory breaks Excel generation in any
+deployed container. The Dockerfile asserts its presence at build time.
+
 ## Running locally
 
 ```bash
@@ -49,7 +73,20 @@ python main.py --host 0.0.0.0 --port 8000
 
 ```bash
 cd /path/to/dmlt-consolidation-agent
-python test_calc_tools.py
+pytest test_calc_engine.py test_calc_tools.py
+```
+
+`test_calc_engine.py` needs only the standard library; `test_calc_tools.py`
+skips itself when the agent framework is not installed.
+
+To generate a report outside the agent and check that every formula
+recalculates without errors:
+
+```bash
+cd app/excel_generator
+python generate_report.py --master m.json --growth g.json --system s.json \
+                          --org o.json --nriv n.json --out report.xlsx
+python verify_report.py report.xlsx      # needs LibreOffice + uno bindings
 ```
 
 ## Environment Variables

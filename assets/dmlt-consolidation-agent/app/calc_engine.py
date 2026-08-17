@@ -15,8 +15,9 @@ must hold is the shape of the returned dicts, documented on each function.
 
 Consumers
 ---------
-  * ``app/tools/calc_tools.py``          — thin LangChain ``StructuredTool`` wrappers
-  * ``assets/dmlt-excel-generator/``     — collision / conflict detection + sizing
+  * ``app/tools/calc_tools.py``     — thin LangChain ``StructuredTool`` wrappers
+  * ``app/excel_generator/``        — collision / conflict detection + sizing,
+                                      reached through ``excel_generator/dmlt_calc.py``
 
 Input sections
 --------------

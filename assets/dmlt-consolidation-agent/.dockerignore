@@ -1,0 +1,19 @@
+# Keep the build context small and reproducible.
+# Note: app/excel_generator/ must NOT be excluded — the Excel tool runs it
+# as a subprocess and it can only reach the image via `COPY app/`.
+
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Test assets and reports — not needed at runtime
+test_*.py
+conftest.py
+test_report.json
+
+# Generated output
+output/
+outputs/
+*.xlsx

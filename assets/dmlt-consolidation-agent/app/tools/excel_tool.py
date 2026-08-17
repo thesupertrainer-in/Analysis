@@ -18,9 +18,20 @@ from pydantic import BaseModel, Field
 
 logger = logging.getLogger(__name__)
 
-# Path to Excel generator (relative to agent asset root)
-_AGENT_ROOT = Path(__file__).parent.parent.parent
-_GENERATOR_ROOT = _AGENT_ROOT.parent / "dmlt-excel-generator"
+# Path to the Excel generator.
+#
+# The generator lives inside the agent's app/ package (app/excel_generator/)
+# rather than in a sibling asset directory.  asset.yaml builds this asset with
+# buildPath ".", so the Docker context is the agent directory — anything
+# outside it cannot be COPYed into the image.  Keeping the generator under
+# app/ means the Dockerfile's existing `COPY app/ ./app/` ships it, and this
+# path resolves identically on a developer machine and in the container.
+#
+#   __file__            app/tools/excel_tool.py
+#   .parent             app/tools
+#   .parent.parent      app          <- generator sits here
+_APP_ROOT = Path(__file__).resolve().parent.parent
+_GENERATOR_ROOT = _APP_ROOT / "excel_generator"
 _GENERATE_SCRIPT = _GENERATOR_ROOT / "generate_report.py"
 
 
@@ -61,12 +72,21 @@ def _generate_excel(sections_json: str, run_label: str = "") -> str:
 
         out_path = os.path.join(tmp_dir, "report.xlsx")
 
-        # Locate Python with openpyxl
-        pypath = os.environ.get("PYTHONPATH", "/tmp/pylibs")
-        py_exe = sys.executable
+        if not _GENERATE_SCRIPT.is_file():
+            return json.dumps({
+                "success": False,
+                "error": (
+                    f"Excel generator not found at {_GENERATE_SCRIPT}. It must be "
+                    "packaged inside the agent's app/ directory."
+                ),
+            })
 
+        # Run with the same interpreter serving the agent, so the generator sees
+        # the same site-packages (openpyxl ships in the agent's requirements).
+        # generate_report.py puts its own directory on sys.path, so no PYTHONPATH
+        # manipulation is needed here — the environment is inherited unchanged.
         cmd = [
-            py_exe,
+            sys.executable,
             str(_GENERATE_SCRIPT),
             "--master", file_paths["master"],
             "--growth", file_paths["growth"],
@@ -76,13 +96,8 @@ def _generate_excel(sections_json: str, run_label: str = "") -> str:
             "--out",    out_path,
         ]
 
-        env = os.environ.copy()
-        if pypath and pypath not in env.get("PYTHONPATH", ""):
-            env["PYTHONPATH"] = pypath + ":" + env.get("PYTHONPATH", "")
-
         result = subprocess.run(
-            cmd,
-            capture_output=True, text=True, timeout=300, env=env
+            cmd, capture_output=True, text=True, timeout=300
         )
 
         if result.returncode != 0:

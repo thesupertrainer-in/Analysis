@@ -1,11 +1,15 @@
 """
 Bridge to the canonical DMLT calculation engine.
 
-The engine itself lives with the agent asset, at
-``assets/dmlt-consolidation-agent/app/calc_engine.py``.  This module loads it
-by explicit file path and re-exports it, so the Excel generator and the agent
+The engine sits one directory up, at ``app/calc_engine.py``.  This module loads
+it by explicit file path and re-exports it, so the Excel generator and the agent
 share one implementation of the collision / conflict / sizing rules and can
 never drift apart.
+
+Loading by path rather than by import name keeps this working in every context
+the generator runs in: imported from the agent, launched as a subprocess, or
+invoked directly from the command line — none of which guarantee the same
+``sys.path`` or ``PYTHONPATH``.
 
 The module is deliberately *not* called ``calc_engine`` — that name belongs to
 the engine itself, and reusing it here would shadow the real module.
@@ -19,15 +23,13 @@ import os
 
 _HERE = os.path.dirname(os.path.abspath(__file__))
 
-#: Canonical engine location, relative to this file.
-ENGINE_PATH = os.path.normpath(
-    os.path.join(_HERE, os.pardir, "dmlt-consolidation-agent", "app", "calc_engine.py")
-)
+#: Canonical engine location: the parent directory of this package.
+ENGINE_PATH = os.path.normpath(os.path.join(_HERE, os.pardir, "calc_engine.py"))
 
 if not os.path.isfile(ENGINE_PATH):     # pragma: no cover — deployment misconfiguration
     raise ImportError(
         f"DMLT calculation engine not found at {ENGINE_PATH}. The Excel generator "
-        "must sit alongside the dmlt-consolidation-agent asset."
+        "must stay inside the agent's app/ package, next to calc_engine.py."
     )
 
 _spec = importlib.util.spec_from_file_location("dmlt_calc_engine", ENGINE_PATH)
