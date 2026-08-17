@@ -7,7 +7,7 @@ Detection rule:
     - different nrlevel (current level pointer), OR
     - overlapping fromnumber–tonumber ranges (a0<=b1 AND b0<=a1).
 """
-from collections import defaultdict
+from dmlt_calc import detect_conflicts   # shared calculation engine
 from openpyxl.utils import get_column_letter
 from styles import (
     setup_sheet, write_title_banner, write_section_header, write_col_headers,
@@ -17,89 +17,6 @@ from styles import (
     C_CONF_FONT, FMT_INT
 )
 from openpyxl.styles import Font
-
-
-def _ranges_overlap(a_from, a_to, b_from, b_to) -> bool:
-    try:
-        a0, a1 = int(a_from), int(a_to)
-        b0, b1 = int(b_from), int(b_to)
-        return a0 <= b1 and b0 <= a1
-    except (ValueError, TypeError):
-        return False
-
-
-def detect_conflicts(nriv_data: list) -> list:
-    """
-    Returns list of conflict dicts sorted by object+nrrangenr:
-    {
-      "object":    str,
-      "nrrangenr": str,
-      "type":      "LEVEL_MISMATCH" | "RANGE_OVERLAP" | "BOTH",
-      "systems":   [{"sidclnt", "fromnumber", "tonumber", "nrlevel"}]
-    }
-    """
-    key_map: dict[tuple, list] = defaultdict(list)
-    for r in nriv_data:
-        key_map[(r["object"], r["nrrangenr"])].append(r)
-
-    conflicts = []
-    for (obj, rangenr), rows in sorted(key_map.items()):
-        # Need rows from at least 2 distinct sidclnt values
-        sids = list({r["sidclnt"] for r in rows})
-        if len(sids) < 2:
-            continue
-
-        # Pick one representative row per sidclnt
-        rep: dict[str, dict] = {}
-        for r in rows:
-            rep.setdefault(r["sidclnt"], r)
-
-        reps = list(rep.values())
-
-        # Level mismatch
-        levels = {r["nrlevel"] for r in reps}
-        level_mismatch = len(levels) > 1
-
-        # Range overlap (check all pairs of distinct sidclnt reps)
-        range_overlap = False
-        rep_list = sorted(reps, key=lambda r: r["sidclnt"])
-        for i, a in enumerate(rep_list):
-            for b in rep_list[i + 1:]:
-                if _ranges_overlap(
-                    a["fromnumber"], a["tonumber"],
-                    b["fromnumber"], b["tonumber"]
-                ):
-                    range_overlap = True
-                    break
-            if range_overlap:
-                break
-
-        if not (level_mismatch or range_overlap):
-            continue
-
-        if level_mismatch and range_overlap:
-            ctype = "BOTH"
-        elif level_mismatch:
-            ctype = "LEVEL_MISMATCH"
-        else:
-            ctype = "RANGE_OVERLAP"
-
-        conflicts.append({
-            "object":    obj,
-            "nrrangenr": rangenr,
-            "type":      ctype,
-            "systems": [
-                {
-                    "sidclnt":     r["sidclnt"],
-                    "fromnumber":  r["fromnumber"],
-                    "tonumber":    r["tonumber"],
-                    "nrlevel":     r["nrlevel"],
-                }
-                for r in sorted(reps, key=lambda x: x["sidclnt"])
-            ],
-        })
-
-    return conflicts
 
 
 # Severity colours per type

@@ -12,6 +12,9 @@ mta_archives/
 *_mta_build_tmp
 *.mtar
 
+# npm (project-local cache configured in .npmrc)
+.npm-cache/
+
 # Other
 .DS_Store
 

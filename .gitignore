@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Excel generator output
+output/
+outputs/
+
+# Node (see also assets/dmlt-consolidation-cap/.gitignore)
+node_modules/
+.npm-cache/

@@ -15,10 +15,18 @@ from styles import (
 )
 
 
-def build(ws, run_meta: dict):
+#: Label of the detail row that HARDWARE_SIZING divides by.
+COMPRESSION_LABEL = "HANA Compression Factor"
+
+
+def build(ws, run_meta: dict) -> dict:
     """
     run_meta keys used:
       runid, num_source_systems (int), sidcltns (list[str])
+
+    Returns ``{"compression_cell": "COVER!C<row>"}`` — the address of the
+    HANA Compression Factor input cell, resolved from where the row was
+    actually written rather than assumed by downstream sheets.
     """
     setup_sheet(ws)
 
@@ -58,7 +66,11 @@ def build(ws, run_meta: dict):
         ("Prepared By",             ""),
     ]
 
+    compression_row = None
+
     for label, value in details:
+        if label == COMPRESSION_LABEL:
+            compression_row = next_row
         c_label = ws.cell(row=next_row, column=2, value=label)
         style_cell(c_label,
                    font=font_body(9, bold=True),
@@ -159,3 +171,5 @@ def build(ws, run_meta: dict):
 
         ws.row_dimensions[next_row].height = 16
         next_row += 1
+
+    return {"compression_cell": f"COVER!C{compression_row}"}

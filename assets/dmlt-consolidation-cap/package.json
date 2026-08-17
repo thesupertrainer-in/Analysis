@@ -2,6 +2,9 @@
   "name": "dmlt-consolidation-cap",
   "version": "1.0.0",
   "type": "module",
+  "engines": {
+    "node": "^22.0.0"
+  },
   "dependencies": {
     "@cap-js/hana": "^3",
     "@sap/cds": "^10",

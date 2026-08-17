@@ -116,8 +116,8 @@ def build(ws, categories: list, main_refs: dict, compression_cell: str = "COVER!
         # Source MB = SUMIFS of Target MB column from MAIN where category matches
         # Uses absolute references so they don't shift
         src_formula = (
-            f"=SUMIFS(MAIN!${target_col}${start}:MAIN!${target_col}${end},"
-            f"MAIN!${cat_col}${start}:MAIN!${cat_col}${end},"
+            f"=SUMIFS(MAIN!${target_col}${start}:${target_col}${end},"
+            f"MAIN!${cat_col}${start}:${cat_col}${end},"
             f'"{cat}")'
         )
         ws.cell(row=next_row, column=3, value=src_formula)

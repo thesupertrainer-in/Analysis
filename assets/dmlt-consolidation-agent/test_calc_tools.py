@@ -1,123 +1,126 @@
 """
-Tests for DMLT deterministic calculation tools.
-These tests verify that calc tools produce correct, deterministic output
-from the sample JSON data without requiring any Python packages.
+Tests for the LangChain calculation tool wrappers (``app/tools/calc_tools.py``).
+
+The rules themselves are covered by ``test_calc_engine.py``.  What is asserted
+here is the wrapper contract the agent depends on:
+
+  * a ``sections_json`` string goes in,
+  * a JSON string of ``{"success": true, "result": {...}}`` comes out,
+  * bad input is reported as ``{"success": false, "error": ...}`` rather than
+    raising and aborting the run,
+  * the five tools are registered with stable names.
+
+These tests import ``calc_tools``, which needs ``langchain_core`` and
+``pydantic``; they skip cleanly when the agent framework is not installed.
 """
 import json
-import sys
 import os
+import sys
 
-# Add app to path
+import pytest
+
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "app"))
+sys.path.insert(0, os.path.dirname(__file__))
 
-# Load sample data from extractor files
+calc_tools = pytest.importorskip(
+    "app.tools.calc_tools",
+    reason="agent framework (langchain_core / pydantic) not installed",
+)
+
 SAMPLE_DIR = os.path.join(os.path.dirname(__file__), "..", "..", "extractor_files")
 
 
 def load_sections() -> dict:
     sections = {}
     for name in ["master", "growth", "system", "org", "nriv"]:
-        fpath = os.path.join(SAMPLE_DIR, f"RQ1RUN_02_{name}.json")
-        if not os.path.exists(fpath):
-            raise FileNotFoundError(f"Missing: {fpath}")
-        with open(fpath) as f:
-            raw = json.load(f)
+        path = os.path.join(SAMPLE_DIR, f"RQ1RUN_02_{name}.json")
+        if not os.path.exists(path):
+            pytest.skip(f"sample extract not available: {path}")
+        with open(path) as fh:
+            raw = json.load(fh)
         sections[name] = raw.get("data", raw) if isinstance(raw, dict) else raw
     return sections
 
 
-def test_calc_sizing():
-    from tools.calc_tools import _calc_sizing
-    sections = load_sections()
-    result_raw = _calc_sizing(json.dumps(sections))
-    result = json.loads(result_raw)
-    assert result["success"], f"calc_sizing failed: {result.get('error')}"
-    r = result["result"]
-    assert r["totalKB"] > 0
-    assert "APPL" in r["categories"]
-    assert r["tablesTotalCount"] == 90310
-    print(f"✓ calc_sizing: totalGB={r['totalGB']:.2f}, APPL={r['categories']['APPL']['mb']:.0f}MB")
+@pytest.fixture(scope="module")
+def sections_json():
+    return json.dumps(load_sections())
 
 
-def test_calc_collisions():
-    from tools.calc_tools import _calc_collisions
-    sections = load_sections()
-    result_raw = _calc_collisions(json.dumps(sections))
-    result = json.loads(result_raw)
-    assert result["success"], f"calc_collisions failed: {result.get('error')}"
-    r = result["result"]
-    assert r["totalCollisions"] >= 0
-    # Known: BUKRS 0001 appears in both ECQ_300 and RQ1_500
-    assert r["totalCollisions"] > 0, "Expected at least 1 BUKRS collision from known sample data"
-    print(f"✓ calc_collisions: {r['totalCollisions']} collisions, {r['nameConflicts']} name conflicts")
+def _ok(raw: str) -> dict:
+    parsed = json.loads(raw)
+    assert parsed["success"], parsed.get("error")
+    return parsed["result"]
 
 
-def test_calc_nriv():
-    from tools.calc_tools import _calc_nriv_conflicts
-    sections = load_sections()
-    result_raw = _calc_nriv_conflicts(json.dumps(sections))
-    result = json.loads(result_raw)
-    assert result["success"], f"calc_nriv failed: {result.get('error')}"
-    r = result["result"]
-    assert r["totalIntervals"] == 12416
-    # Known: >1000 conflicts (sample data shows 2025)
-    assert r["totalConflicts"] > 1000
-    print(f"✓ calc_nriv: {r['totalConflicts']} conflicts from {r['totalIntervals']} intervals")
+# ---------------------------------------------------------------------------
+# Happy path — each wrapper returns the engine's result
+# ---------------------------------------------------------------------------
+
+def test_sizing_wrapper(sections_json):
+    r = _ok(calc_tools._calc_sizing(sections_json))
+    assert r["calculationType"] == "SIZING"
+    assert sorted(r["systems"]) == ["ECQ_300", "RQ1_500"]
+    assert r["largest_system"]["sidclnt"] == "RQ1_500"
 
 
-def test_calc_growth():
-    from tools.calc_tools import _calc_growth
-    sections = load_sections()
-    result_raw = _calc_growth(json.dumps(sections))
-    result = json.loads(result_raw)
-    assert result["success"], f"calc_growth failed: {result.get('error')}"
-    r = result["result"]
-    assert r["totalRows"] == 250
-    assert len(r["yearsAvailable"]) > 0
-    print(f"✓ calc_growth: {r['totalRows']} rows, years: {r['yearsAvailable']}")
+def test_collisions_wrapper(sections_json):
+    r = _ok(calc_tools._calc_collisions(sections_json))
+    assert r["calculationType"] == "COMPANY_CODE_COLLISIONS"
+    assert r["collision_count"] == 1
 
 
-def test_calc_system_profiles():
-    from tools.calc_tools import _calc_system_profiles
-    sections = load_sections()
-    result_raw = _calc_system_profiles(json.dumps(sections))
-    result = json.loads(result_raw)
-    assert result["success"], f"calc_system_profiles failed: {result.get('error')}"
-    r = result["result"]
-    assert r["systemCount"] == 2  # ECQ_300 and RQ1_500
-    print(f"✓ calc_system_profiles: {r['systemCount']} systems — {r['releases']}")
+def test_nriv_wrapper(sections_json):
+    r = _ok(calc_tools._calc_nriv_conflicts(sections_json))
+    assert r["calculationType"] == "NUMBER_RANGE_CONFLICTS"
+    assert r["total_intervals"] == 12416
+    assert r["conflict_count"] > 1
 
 
-def test_determinism():
-    """Verify identical input produces identical output (10 runs)."""
-    from tools.calc_tools import _calc_sizing
-    sections = load_sections()
-    sj = json.dumps(sections)
-    results = [json.loads(_calc_sizing(sj))["result"]["totalKB"] for _ in range(10)]
-    assert len(set(results)) == 1, "calc_sizing is not deterministic!"
-    print(f"✓ determinism: 10 runs of calc_sizing all returned {results[0]:.2f} KB")
+def test_growth_wrapper(sections_json):
+    r = _ok(calc_tools._calc_growth(sections_json))
+    assert r["calculationType"] == "GROWTH"
+    assert 0 not in r["years"]
 
 
-if __name__ == "__main__":
-    print("Running DMLT calc tool tests...")
-    tests = [
-        test_calc_sizing,
-        test_calc_collisions,
-        test_calc_nriv,
-        test_calc_growth,
-        test_calc_system_profiles,
-        test_determinism,
+def test_system_profiles_wrapper(sections_json):
+    r = _ok(calc_tools._calc_system_profiles(sections_json))
+    assert r["calculationType"] == "SYSTEM_PROFILES"
+    assert r["system_count"] == 2
+
+
+# ---------------------------------------------------------------------------
+# Contract behaviour
+# ---------------------------------------------------------------------------
+
+def test_wrappers_report_bad_json_as_error_not_exception():
+    parsed = json.loads(calc_tools._calc_sizing("{not json"))
+    assert parsed["success"] is False
+    assert parsed["error"]
+
+
+def test_wrappers_reject_non_object_payload():
+    parsed = json.loads(calc_tools._calc_sizing("[1, 2, 3]"))
+    assert parsed["success"] is False
+
+
+def test_wrappers_tolerate_missing_sections():
+    r = _ok(calc_tools._calc_collisions("{}"))
+    assert r["collision_count"] == 0
+
+
+def test_determinism(sections_json):
+    """Identical input must produce byte-identical output."""
+    runs = {calc_tools._calc_sizing(sections_json) for _ in range(5)}
+    assert len(runs) == 1
+
+
+def test_tool_registry_names():
+    names = [t.name for t in calc_tools.get_calc_tools()]
+    assert names == [
+        "calc_hardware_sizing",
+        "calc_company_code_collisions",
+        "calc_number_range_conflicts",
+        "calc_growth_trends",
+        "calc_system_profiles",
     ]
-    failed = 0
-    for t in tests:
-        try:
-            t()
-        except Exception as e:
-            print(f"✗ {t.__name__}: {e}")
-            failed += 1
-
-    if failed:
-        print(f"\n{failed}/{len(tests)} tests FAILED")
-        sys.exit(1)
-    else:
-        print(f"\nAll {len(tests)} tests PASSED")

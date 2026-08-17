@@ -33,11 +33,13 @@ if _HERE not in sys.path:
 
 import openpyxl
 
+from dmlt_calc import detect_collisions, detect_conflicts   # shared calculation engine
+
 from sheets.cover          import build as build_cover
 from sheets.systems        import build as build_systems
 from sheets.main_sheet     import build as build_main
-from sheets.collisions     import build as build_collisions, detect_collisions
-from sheets.conflicts      import build as build_conflicts, detect_conflicts
+from sheets.collisions     import build as build_collisions
+from sheets.conflicts      import build as build_conflicts
 from sheets.growth         import build as build_growth
 from sheets.hardware_sizing import build as build_hardware_sizing
 from sheets.summary        import build as build_summary
@@ -133,7 +135,7 @@ def generate_report(sections: dict, out_path: str) -> str:
 
     # ── Sheet 1: COVER ─────────────────────────────────────────────────────
     ws_cover = wb.create_sheet("COVER")
-    build_cover(ws_cover, run_meta)
+    cover_refs = build_cover(ws_cover, run_meta)
 
     # ── Sheet 2: SYSTEMS ───────────────────────────────────────────────────
     ws_systems = wb.create_sheet("SYSTEMS")
@@ -156,15 +158,15 @@ def generate_report(sections: dict, out_path: str) -> str:
     build_growth(ws_growth, growth_data)
 
     # ── Sheet 7: HARDWARE_SIZING ───────────────────────────────────────────
-    # Compression factor is read from COVER!C10 (the 8th details row = row 10
-    # when counting from row 1 banner; the project details start at row 5 and
-    # HANA Compression Factor is the 6th item → row 5+5 = row 10).
+    # The compression-factor address comes back from build_cover() rather than
+    # being hardcoded, so re-ordering the COVER details cannot silently point
+    # the sizing division at the wrong cell.
     ws_hw = wb.create_sheet("HARDWARE_SIZING")
     hw_refs = build_hardware_sizing(
         ws_hw,
         categories=categories,
         main_refs=main_refs,
-        compression_cell="COVER!C10",
+        compression_cell=cover_refs["compression_cell"],
     )
 
     # ── Sheet 8: SUMMARY ───────────────────────────────────────────────────

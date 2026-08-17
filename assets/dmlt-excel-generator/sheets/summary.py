@@ -83,8 +83,8 @@ def build(ws,
     next_row = write_section_header(ws, next_row, 2, 6,
                                     "Q1 — Overall Sizing")
     _kpi("Included Source Size (GB)",
-         f"=ROUND(SUMIF(MAIN!${inc_col}${start}:MAIN!${inc_col}${end},"
-         f'"Y",MAIN!${sizemb_col}${start}:MAIN!${sizemb_col}${end})/1024,2)',
+         f"=ROUND(SUMIF(MAIN!${inc_col}${start}:${inc_col}${end},"
+         f'"Y",MAIN!${sizemb_col}${start}:${sizemb_col}${end})/1024,2)',
          FMT_DEC2, fill_inc,
          Font(name="Arial", size=9, color=C_INC_FONT))
 
@@ -94,12 +94,12 @@ def build(ws,
          Font(name="Arial", size=9, color=C_INC_FONT))
 
     _kpi("Tables Included",
-         f'=COUNTIF(MAIN!${inc_col}${start}:MAIN!${inc_col}${end},"Y")',
+         f'=COUNTIF(MAIN!${inc_col}${start}:${inc_col}${end},"Y")',
          FMT_INT, fill_inc,
          Font(name="Arial", size=9, color=C_INC_FONT))
 
     _kpi("Tables Excluded",
-         f'=COUNTIF(MAIN!${inc_col}${start}:MAIN!${inc_col}${end},"N")',
+         f'=COUNTIF(MAIN!${inc_col}${start}:${inc_col}${end},"N")',
          FMT_INT, fill_formula)
 
     next_row += 1
@@ -115,8 +115,8 @@ def build(ws,
 
     for cat in sorted(categories):
         src_mb_formula = (
-            f"=SUMIFS(MAIN!${target_col}${start}:MAIN!${target_col}${end},"
-            f'MAIN!${cat_col}${start}:MAIN!${cat_col}${end},"{cat}")'
+            f"=SUMIFS(MAIN!${target_col}${start}:${target_col}${end},"
+            f'MAIN!${cat_col}${start}:${cat_col}${end},"{cat}")'
         )
         c_cat = ws.cell(row=next_row, column=2, value=cat)
         style_cell(c_cat, font=font_body(9), alignment=align_left, border=border_thin)
@@ -233,8 +233,8 @@ def build(ws,
         occ_gb = round((occ_map.get(sid) or 0) / 1024, 2)
 
         src_mb_formula = (
-            f"=SUMIFS(MAIN!${target_col}${start}:MAIN!${target_col}${end},"
-            f'MAIN!${sys_col}${start}:MAIN!${sys_col}${end},"{sid}")'
+            f"=SUMIFS(MAIN!${target_col}${start}:${target_col}${end},"
+            f'MAIN!${sys_col}${start}:${sys_col}${end},"{sid}")'
         )
         ws.cell(row=next_row, column=2, value=sid)
         style_cell(ws.cell(row=next_row, column=2),

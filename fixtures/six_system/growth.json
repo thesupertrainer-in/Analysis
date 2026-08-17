@@ -1,0 +1,2736 @@
+{
+ "runid": "SYNTH_6SYS",
+ "section": "growth",
+ "data": [
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2015,
+   "doc_count": 90000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2016,
+   "doc_count": 180000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2017,
+   "doc_count": 270000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2018,
+   "doc_count": 360000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2019,
+   "doc_count": 450000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2020,
+   "doc_count": 540000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2021,
+   "doc_count": 630000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2022,
+   "doc_count": 720000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2023,
+   "doc_count": 810000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2024,
+   "doc_count": 900000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2025,
+   "doc_count": 990000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2026,
+   "doc_count": 1080000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "ACDOCA",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 2015,
+   "doc_count": 180000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 2016,
+   "doc_count": 360000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 2017,
+   "doc_count": 540000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 2018,
+   "doc_count": 720000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 2019,
+   "doc_count": 900000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 2020,
+   "doc_count": 1080000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 2021,
+   "doc_count": 1260000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 2022,
+   "doc_count": 1440000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 2023,
+   "doc_count": 1620000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 2024,
+   "doc_count": 1800000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 2025,
+   "doc_count": 1980000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 2026,
+   "doc_count": 2160000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BSEG",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 2015,
+   "doc_count": 270000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 2016,
+   "doc_count": 540000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 2017,
+   "doc_count": 810000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 2018,
+   "doc_count": 1080000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 2019,
+   "doc_count": 1350000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 2020,
+   "doc_count": 1620000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 2021,
+   "doc_count": 1890000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 2022,
+   "doc_count": 2160000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 2023,
+   "doc_count": 2430000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 2024,
+   "doc_count": 2700000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 2025,
+   "doc_count": 2970000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 2026,
+   "doc_count": 3240000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "BKPF",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 2015,
+   "doc_count": 360000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 2016,
+   "doc_count": 720000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 2017,
+   "doc_count": 1080000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 2018,
+   "doc_count": 1440000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 2019,
+   "doc_count": 1800000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 2020,
+   "doc_count": 2160000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 2021,
+   "doc_count": 2520000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 2022,
+   "doc_count": 2880000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 2023,
+   "doc_count": 3240000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 2024,
+   "doc_count": 3600000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 2025,
+   "doc_count": 3960000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 2026,
+   "doc_count": 4320000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "MSEG",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 2015,
+   "doc_count": 450000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 2016,
+   "doc_count": 900000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 2017,
+   "doc_count": 1350000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 2018,
+   "doc_count": 1800000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 2019,
+   "doc_count": 2250000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 2020,
+   "doc_count": 2700000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 2021,
+   "doc_count": 3150000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 2022,
+   "doc_count": 3600000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 2023,
+   "doc_count": 4050000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 2024,
+   "doc_count": 4500000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 2025,
+   "doc_count": 4950000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 2026,
+   "doc_count": 5400000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S01_100",
+   "tabname": "VBAK",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2015,
+   "doc_count": 144000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2016,
+   "doc_count": 288000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2017,
+   "doc_count": 432000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2018,
+   "doc_count": 576000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2019,
+   "doc_count": 720000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2020,
+   "doc_count": 864000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2021,
+   "doc_count": 1008000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2022,
+   "doc_count": 1152000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2023,
+   "doc_count": 1296000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2024,
+   "doc_count": 1440000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2025,
+   "doc_count": 1584000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2026,
+   "doc_count": 1728000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "ACDOCA",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 2015,
+   "doc_count": 288000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 2016,
+   "doc_count": 576000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 2017,
+   "doc_count": 864000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 2018,
+   "doc_count": 1152000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 2019,
+   "doc_count": 1440000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 2020,
+   "doc_count": 1728000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 2021,
+   "doc_count": 2016000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 2022,
+   "doc_count": 2304000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 2023,
+   "doc_count": 2592000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 2024,
+   "doc_count": 2880000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 2025,
+   "doc_count": 3168000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 2026,
+   "doc_count": 3456000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BSEG",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 2015,
+   "doc_count": 432000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 2016,
+   "doc_count": 864000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 2017,
+   "doc_count": 1296000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 2018,
+   "doc_count": 1728000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 2019,
+   "doc_count": 2160000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 2020,
+   "doc_count": 2592000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 2021,
+   "doc_count": 3024000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 2022,
+   "doc_count": 3456000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 2023,
+   "doc_count": 3888000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 2024,
+   "doc_count": 4320000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 2025,
+   "doc_count": 4752000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 2026,
+   "doc_count": 5184000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "BKPF",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 2015,
+   "doc_count": 576000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 2016,
+   "doc_count": 1152000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 2017,
+   "doc_count": 1728000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 2018,
+   "doc_count": 2304000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 2019,
+   "doc_count": 2880000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 2020,
+   "doc_count": 3456000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 2021,
+   "doc_count": 4032000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 2022,
+   "doc_count": 4608000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 2023,
+   "doc_count": 5184000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 2024,
+   "doc_count": 5760000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 2025,
+   "doc_count": 6336000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 2026,
+   "doc_count": 6912000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "MSEG",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 2015,
+   "doc_count": 720000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 2016,
+   "doc_count": 1440000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 2017,
+   "doc_count": 2160000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 2018,
+   "doc_count": 2880000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 2019,
+   "doc_count": 3600000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 2020,
+   "doc_count": 4320000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 2021,
+   "doc_count": 5040000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 2022,
+   "doc_count": 5760000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 2023,
+   "doc_count": 6480000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 2024,
+   "doc_count": 7200000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 2025,
+   "doc_count": 7920000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 2026,
+   "doc_count": 8640000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S02_100",
+   "tabname": "VBAK",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2015,
+   "doc_count": 1980000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2016,
+   "doc_count": 3960000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2017,
+   "doc_count": 5940000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2018,
+   "doc_count": 7920000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2019,
+   "doc_count": 9900000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2020,
+   "doc_count": 11880000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2021,
+   "doc_count": 13860000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2022,
+   "doc_count": 15840000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2023,
+   "doc_count": 17820000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2024,
+   "doc_count": 19800000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2025,
+   "doc_count": 21780000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2026,
+   "doc_count": 23760000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "ACDOCA",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 2015,
+   "doc_count": 3960000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 2016,
+   "doc_count": 7920000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 2017,
+   "doc_count": 11880000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 2018,
+   "doc_count": 15840000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 2019,
+   "doc_count": 19800000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 2020,
+   "doc_count": 23760000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 2021,
+   "doc_count": 27720000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 2022,
+   "doc_count": 31680000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 2023,
+   "doc_count": 35640000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 2024,
+   "doc_count": 39600000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 2025,
+   "doc_count": 43560000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 2026,
+   "doc_count": 47520000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BSEG",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 2015,
+   "doc_count": 5940000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 2016,
+   "doc_count": 11880000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 2017,
+   "doc_count": 17820000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 2018,
+   "doc_count": 23760000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 2019,
+   "doc_count": 29700000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 2020,
+   "doc_count": 35640000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 2021,
+   "doc_count": 41580000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 2022,
+   "doc_count": 47520000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 2023,
+   "doc_count": 53460000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 2024,
+   "doc_count": 59400000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 2025,
+   "doc_count": 65340000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 2026,
+   "doc_count": 71280000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "BKPF",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 2015,
+   "doc_count": 7920000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 2016,
+   "doc_count": 15840000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 2017,
+   "doc_count": 23760000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 2018,
+   "doc_count": 31680000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 2019,
+   "doc_count": 39600000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 2020,
+   "doc_count": 47520000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 2021,
+   "doc_count": 55440000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 2022,
+   "doc_count": 63360000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 2023,
+   "doc_count": 71280000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 2024,
+   "doc_count": 79200000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 2025,
+   "doc_count": 87120000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 2026,
+   "doc_count": 95040000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "MSEG",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 2015,
+   "doc_count": 9900000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 2016,
+   "doc_count": 19800000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 2017,
+   "doc_count": 29700000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 2018,
+   "doc_count": 39600000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 2019,
+   "doc_count": 49500000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 2020,
+   "doc_count": 59400000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 2021,
+   "doc_count": 69300000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 2022,
+   "doc_count": 79200000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 2023,
+   "doc_count": 89100000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 2024,
+   "doc_count": 99000000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 2025,
+   "doc_count": 108900000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 2026,
+   "doc_count": 118800000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S03_100",
+   "tabname": "VBAK",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2015,
+   "doc_count": 72000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2016,
+   "doc_count": 144000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2017,
+   "doc_count": 216000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2018,
+   "doc_count": 288000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2019,
+   "doc_count": 360000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2020,
+   "doc_count": 432000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2021,
+   "doc_count": 504000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2022,
+   "doc_count": 576000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2023,
+   "doc_count": 648000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2024,
+   "doc_count": 720000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2025,
+   "doc_count": 792000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2026,
+   "doc_count": 864000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "ACDOCA",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 2015,
+   "doc_count": 144000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 2016,
+   "doc_count": 288000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 2017,
+   "doc_count": 432000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 2018,
+   "doc_count": 576000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 2019,
+   "doc_count": 720000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 2020,
+   "doc_count": 864000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 2021,
+   "doc_count": 1008000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 2022,
+   "doc_count": 1152000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 2023,
+   "doc_count": 1296000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 2024,
+   "doc_count": 1440000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 2025,
+   "doc_count": 1584000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 2026,
+   "doc_count": 1728000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BSEG",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 2015,
+   "doc_count": 216000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 2016,
+   "doc_count": 432000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 2017,
+   "doc_count": 648000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 2018,
+   "doc_count": 864000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 2019,
+   "doc_count": 1080000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 2020,
+   "doc_count": 1296000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 2021,
+   "doc_count": 1512000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 2022,
+   "doc_count": 1728000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 2023,
+   "doc_count": 1944000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 2024,
+   "doc_count": 2160000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 2025,
+   "doc_count": 2376000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 2026,
+   "doc_count": 2592000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "BKPF",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 2015,
+   "doc_count": 288000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 2016,
+   "doc_count": 576000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 2017,
+   "doc_count": 864000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 2018,
+   "doc_count": 1152000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 2019,
+   "doc_count": 1440000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 2020,
+   "doc_count": 1728000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 2021,
+   "doc_count": 2016000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 2022,
+   "doc_count": 2304000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 2023,
+   "doc_count": 2592000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 2024,
+   "doc_count": 2880000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 2025,
+   "doc_count": 3168000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 2026,
+   "doc_count": 3456000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "MSEG",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 2015,
+   "doc_count": 360000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 2016,
+   "doc_count": 720000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 2017,
+   "doc_count": 1080000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 2018,
+   "doc_count": 1440000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 2019,
+   "doc_count": 1800000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 2020,
+   "doc_count": 2160000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 2021,
+   "doc_count": 2520000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 2022,
+   "doc_count": 2880000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 2023,
+   "doc_count": 3240000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 2024,
+   "doc_count": 3600000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 2025,
+   "doc_count": 3960000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 2026,
+   "doc_count": 4320000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S04_100",
+   "tabname": "VBAK",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2015,
+   "doc_count": 108000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2016,
+   "doc_count": 216000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2017,
+   "doc_count": 324000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2018,
+   "doc_count": 432000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2019,
+   "doc_count": 540000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2020,
+   "doc_count": 648000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2021,
+   "doc_count": 756000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2022,
+   "doc_count": 864000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2023,
+   "doc_count": 972000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2024,
+   "doc_count": 1080000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2025,
+   "doc_count": 1188000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2026,
+   "doc_count": 1296000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "ACDOCA",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 2015,
+   "doc_count": 216000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 2016,
+   "doc_count": 432000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 2017,
+   "doc_count": 648000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 2018,
+   "doc_count": 864000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 2019,
+   "doc_count": 1080000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 2020,
+   "doc_count": 1296000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 2021,
+   "doc_count": 1512000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 2022,
+   "doc_count": 1728000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 2023,
+   "doc_count": 1944000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 2024,
+   "doc_count": 2160000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 2025,
+   "doc_count": 2376000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 2026,
+   "doc_count": 2592000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BSEG",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 2015,
+   "doc_count": 324000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 2016,
+   "doc_count": 648000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 2017,
+   "doc_count": 972000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 2018,
+   "doc_count": 1296000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 2019,
+   "doc_count": 1620000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 2020,
+   "doc_count": 1944000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 2021,
+   "doc_count": 2268000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 2022,
+   "doc_count": 2592000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 2023,
+   "doc_count": 2916000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 2024,
+   "doc_count": 3240000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 2025,
+   "doc_count": 3564000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 2026,
+   "doc_count": 3888000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "BKPF",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 2015,
+   "doc_count": 432000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 2016,
+   "doc_count": 864000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 2017,
+   "doc_count": 1296000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 2018,
+   "doc_count": 1728000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 2019,
+   "doc_count": 2160000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 2020,
+   "doc_count": 2592000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 2021,
+   "doc_count": 3024000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 2022,
+   "doc_count": 3456000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 2023,
+   "doc_count": 3888000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 2024,
+   "doc_count": 4320000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 2025,
+   "doc_count": 4752000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 2026,
+   "doc_count": 5184000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "MSEG",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 2015,
+   "doc_count": 540000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 2016,
+   "doc_count": 1080000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 2017,
+   "doc_count": 1620000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 2018,
+   "doc_count": 2160000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 2019,
+   "doc_count": 2700000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 2020,
+   "doc_count": 3240000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 2021,
+   "doc_count": 3780000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 2022,
+   "doc_count": 4320000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 2023,
+   "doc_count": 4860000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 2024,
+   "doc_count": 5400000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 2025,
+   "doc_count": 5940000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 2026,
+   "doc_count": 6480000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S05_100",
+   "tabname": "VBAK",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2015,
+   "doc_count": 45000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2016,
+   "doc_count": 90000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2017,
+   "doc_count": 135000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2018,
+   "doc_count": 180000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2019,
+   "doc_count": 225000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2020,
+   "doc_count": 270000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2021,
+   "doc_count": 315000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2022,
+   "doc_count": 360000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2023,
+   "doc_count": 405000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2024,
+   "doc_count": 450000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2025,
+   "doc_count": 495000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 2026,
+   "doc_count": 540000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "ACDOCA",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 2015,
+   "doc_count": 90000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 2016,
+   "doc_count": 180000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 2017,
+   "doc_count": 270000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 2018,
+   "doc_count": 360000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 2019,
+   "doc_count": 450000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 2020,
+   "doc_count": 540000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 2021,
+   "doc_count": 630000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 2022,
+   "doc_count": 720000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 2023,
+   "doc_count": 810000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 2024,
+   "doc_count": 900000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 2025,
+   "doc_count": 990000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 2026,
+   "doc_count": 1080000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BSEG",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 2015,
+   "doc_count": 135000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 2016,
+   "doc_count": 270000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 2017,
+   "doc_count": 405000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 2018,
+   "doc_count": 540000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 2019,
+   "doc_count": 675000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 2020,
+   "doc_count": 810000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 2021,
+   "doc_count": 945000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 2022,
+   "doc_count": 1080000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 2023,
+   "doc_count": 1215000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 2024,
+   "doc_count": 1350000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 2025,
+   "doc_count": 1485000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 2026,
+   "doc_count": 1620000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "BKPF",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 2015,
+   "doc_count": 180000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 2016,
+   "doc_count": 360000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 2017,
+   "doc_count": 540000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 2018,
+   "doc_count": 720000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 2019,
+   "doc_count": 900000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 2020,
+   "doc_count": 1080000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 2021,
+   "doc_count": 1260000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 2022,
+   "doc_count": 1440000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 2023,
+   "doc_count": 1620000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 2024,
+   "doc_count": 1800000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 2025,
+   "doc_count": 1980000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 2026,
+   "doc_count": 2160000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "MSEG",
+   "gjahr": 0,
+   "doc_count": 7777777
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 2015,
+   "doc_count": 225000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 2016,
+   "doc_count": 450000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 2017,
+   "doc_count": 675000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 2018,
+   "doc_count": 900000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 2019,
+   "doc_count": 1125000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 2020,
+   "doc_count": 1350000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 2021,
+   "doc_count": 1575000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 2022,
+   "doc_count": 1800000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 2023,
+   "doc_count": 2025000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 2024,
+   "doc_count": 2250000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 2025,
+   "doc_count": 2475000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 2026,
+   "doc_count": 2700000
+  },
+  {
+   "runid": "SYNTH_6SYS",
+   "sidclnt": "S06_100",
+   "tabname": "VBAK",
+   "gjahr": 0,
+   "doc_count": 7777777
+  }
+ ]
+}

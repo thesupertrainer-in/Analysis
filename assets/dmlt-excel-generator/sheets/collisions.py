@@ -6,7 +6,7 @@ Detection rule:
   group by from_id.
   A collision = same from_id in >1 sidclnt with a DIFFERENT from_text.
 """
-from collections import defaultdict
+from dmlt_calc import detect_collisions   # shared calculation engine
 from openpyxl.utils import get_column_letter
 from styles import (
     setup_sheet, write_title_banner, write_section_header, write_col_headers,
@@ -16,37 +16,6 @@ from styles import (
     C_COL_FONT, C_WHITE, FMT_INT
 )
 from openpyxl.styles import Font, PatternFill, Alignment
-
-
-def detect_collisions(org_data: list) -> list:
-    """
-    Returns list of collision dicts:
-    { "bukrs": str, "systems": [{"sidclnt": str, "name": str}] }
-    sorted by bukrs.
-    """
-    # Only BUKRS → CLIENT edges
-    bukrs_client = [
-        r for r in org_data
-        if r.get("from_type") == "BUKRS" and r.get("to_type") == "CLIENT"
-    ]
-
-    # group by from_id → {sidclnt: from_text}
-    code_map: dict[str, dict] = defaultdict(dict)
-    for r in bukrs_client:
-        code_map[r["from_id"]][r["sidclnt"]] = r.get("from_text", "")
-
-    collisions = []
-    for bukrs, smap in sorted(code_map.items()):
-        if len(smap) > 1 and len(set(smap.values())) > 1:
-            collisions.append({
-                "bukrs":   bukrs,
-                "systems": [
-                    {"sidclnt": sid, "name": name}
-                    for sid, name in sorted(smap.items())
-                ],
-            })
-
-    return collisions
 
 
 def build(ws, org_data: list) -> int:
