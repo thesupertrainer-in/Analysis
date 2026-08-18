@@ -150,7 +150,7 @@ def build(ws, run_meta: dict) -> dict:
     for col, h in zip(hdr_cols, hdr_cells):
         c = ws.cell(row=next_row, column=col, value=h)
         style_cell(c, fill=fill_section,
-                   font=Font(name="Arial", bold=True, color="FFFFFF", size=9),
+                   font=Font(name="Arial", bold=True, color=C_WHITE, size=9),
                    alignment=align_center, border=border_thin)
     ws.merge_cells(f"D{next_row}:F{next_row}")
     next_row += 1

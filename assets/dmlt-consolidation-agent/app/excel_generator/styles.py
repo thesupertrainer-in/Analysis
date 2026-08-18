@@ -10,21 +10,33 @@ from openpyxl.utils import get_column_letter
 
 # ---------------------------------------------------------------------------
 # Colour palette
+#
+# Colours are 8-digit ARGB with an explicit FF (opaque) alpha, matching what
+# Excel itself writes.  openpyxl would otherwise pad a 6-digit value with a
+# 00 alpha, which renders the same but does not compare equal to a
+# hand-authored reference workbook.
 # ---------------------------------------------------------------------------
-C_TITLE      = "1C2833"   # dark slate  – title banner
-C_SUBBANNER  = "2E4057"   # navy        – sub-banner / column headers
-C_SECTION    = "048A81"   # teal        – section headers
-C_INPUT_FILL = "E3F2FD"   # light blue  – editable input cells
-C_INC_FILL   = "E8F5E9"   # light green – included rows
-C_INC_FONT   = "2E7D32"   # dark green
-C_COL_FILL   = "FDECEA"   # light red   – collision rows
-C_COL_FONT   = "B71C1C"   # dark red
-C_CONF_FILL  = "FFF3E0"   # light amber – conflict rows
-C_CONF_FONT  = "BF8F00"   # dark amber
-C_FORM_FILL  = "ECEFF1"   # light grey  – formula / auto cells
-C_FORM_FONT  = "546E7A"   # grey text
-C_WHITE      = "FFFFFF"
-C_BORDER     = "D0D0D0"
+C_TITLE      = "FF1C2833"   # dark slate  – title banner
+C_SUBBANNER  = "FF2E4057"   # navy        – sub-banner / column headers
+C_SECTION    = "FF048A81"   # teal        – section headers
+C_INPUT_FILL = "FFE3F2FD"   # light blue  – editable input cells
+C_INC_FILL   = "FFE8F5E9"   # light green – included rows
+C_INC_FONT   = "FF2E7D32"   # dark green
+C_COL_FILL   = "FFFDECEA"   # light red   – collision rows
+C_COL_FONT   = "FFB71C1C"   # dark red
+C_CONF_FILL  = "FFFFF3E0"   # light amber – conflict rows
+C_CONF_FONT  = "FFBF8F00"   # dark amber
+C_FORM_FILL  = "FFECEFF1"   # light grey  – formula / auto cells
+C_FORM_FONT  = "FF546E7A"   # grey text
+C_WHITE      = "FFFFFFFF"
+C_BORDER     = "FFD0D0D0"
+
+# MAIN decision-sheet palette (matches MAIN_mockup.xlsx)
+C_META_HDR   = "FF795548"   # brown       – collapsible metadata group header
+C_META_FILL  = "FFEFEBE9"   # brown tint  – metadata body cells
+C_META_FONT  = "FF5D4037"   # dark brown  – metadata text
+C_BODY_FONT  = "FF2C3E50"   # slate       – ordinary body text
+C_ROWLBL     = "FFF5F5F5"   # near-white  – row-label cells (MAIN_DECISION)
 
 # ---------------------------------------------------------------------------
 # Fills
@@ -38,6 +50,9 @@ fill_inc       = PatternFill("solid", fgColor=C_INC_FILL)
 fill_col       = PatternFill("solid", fgColor=C_COL_FILL)
 fill_conf      = PatternFill("solid", fgColor=C_CONF_FILL)
 fill_formula   = PatternFill("solid", fgColor=C_FORM_FILL)
+fill_meta_hdr  = PatternFill("solid", fgColor=C_META_HDR)
+fill_meta      = PatternFill("solid", fgColor=C_META_FILL)
+fill_rowlbl    = PatternFill("solid", fgColor=C_ROWLBL)
 fill_none      = PatternFill("none")
 
 # ---------------------------------------------------------------------------
@@ -69,6 +84,18 @@ def font_conf(size=9, bold=False):
 
 def font_formula(size=9):
     return Font(name="Arial", size=size, color=C_FORM_FONT)
+
+def font_meta(size=8, bold=False):
+    """Metadata columns — dark brown on the brown tint."""
+    return Font(name="Arial", size=size, bold=bold, color=C_META_FONT)
+
+def font_data(size=9, bold=False):
+    """Ordinary MAIN body text — slate, not pure black."""
+    return Font(name="Arial", size=size, bold=bold, color=C_BODY_FONT)
+
+def font_subhdr(size=8):
+    """Grey sub-header row beneath the system group headers."""
+    return Font(name="Arial", size=size, bold=True, color=C_FORM_FONT)
 
 # ---------------------------------------------------------------------------
 # Alignments

@@ -140,63 +140,121 @@ def scan_errors(path: str) -> list:
 
 
 def read_totals(path: str) -> dict:
-    """Pull the headline numbers the dynamic check compares before/after."""
+    """
+    Pull the headline numbers the dynamic check compares before and after.
+
+    MAIN's TOTAL row carries one SUM per system MB column plus the Incl. MB
+    total; the count of Y / blank Include? cells is read from the grid itself.
+    """
     wb = openpyxl.load_workbook(path, data_only=True)
+    ws = wb["MAIN"]
     out = {}
 
-    hw = wb["HARDWARE_SIZING"]
-    for row in hw.iter_rows(min_col=2, max_col=5):
-        if str(row[0].value).strip().upper() == "TOTAL":
-            out["hw_total_source_mb"] = row[1].value
-            out["hw_total_target_mb"] = row[2].value
-            out["hw_total_target_gb"] = row[3].value
+    hdr = _main_geometry(ws)
+    total_row = None
+    for r in range(hdr["data_start"], ws.max_row + 1):
+        if str(ws.cell(row=r, column=hdr["table_col"]).value).strip().upper() == "TOTAL":
+            total_row = r
             break
+    if total_row is None:
+        raise RuntimeError("Could not find MAIN's TOTAL row")
 
-    sm = wb["SUMMARY"]
-    wanted = {
-        "Included Source Size (GB)": "summary_included_gb",
-        "Target S/4HANA Size (GB)": "summary_target_gb",
-        "Tables Included": "summary_tables_included",
-        "Tables Excluded": "summary_tables_excluded",
-    }
-    for row in sm.iter_rows(min_col=2, max_col=3):
-        label = str(row[0].value).strip() if row[0].value else ""
-        if label in wanted:
-            out[wanted[label]] = row[1].value
+    out["main_included_mb"] = ws.cell(row=total_row, column=hdr["total_col"]).value
+    for i, base in enumerate(hdr["sys_bases"]):
+        out[f"sys{i + 1}_total_mb"] = ws.cell(row=total_row, column=base + 1).value
+
+    y = n = blank = 0
+    for r in range(hdr["data_start"], total_row):
+        for base in hdr["sys_bases"]:
+            v = ws.cell(row=r, column=base + 2).value
+            v = str(v).strip().upper() if v is not None else ""
+            if v == "Y":
+                y += 1
+            elif v == "N":
+                n += 1
+            else:
+                blank += 1
+    out["include_y"] = y
+    out["include_n"] = n
+    out["include_blank"] = blank
 
     wb.close()
     return out
 
 
+def _main_geometry(ws) -> dict:
+    """
+    Locate MAIN's columns without assuming a system count.
+
+    The "Inc?" sub-headers mark each system group; "Incl. MB" marks the total
+    column. Everything is discovered, so the checker keeps working when the
+    run has three systems or thirty.
+    """
+    hdr_row = None
+    for r in range(1, 12):
+        vals = [str(ws.cell(row=r, column=c).value or "") for c in range(1, ws.max_column + 1)]
+        if "Inc?" in vals:
+            hdr_row = r
+            break
+    if hdr_row is None:
+        raise RuntimeError("Could not find MAIN's 'Inc?' sub-header row")
+
+    sys_bases = [
+        c - 2                       # Entries column of that group
+        for c in range(1, ws.max_column + 1)
+        if str(ws.cell(row=hdr_row, column=c).value or "") == "Inc?"
+    ]
+
+    total_col = None
+    for c in range(1, ws.max_column + 1):
+        if str(ws.cell(row=hdr_row - 1, column=c).value or "") == "Incl. MB":
+            total_col = c
+            break
+    if total_col is None:
+        raise RuntimeError("Could not find MAIN's 'Incl. MB' column")
+
+    table_col = None
+    for c in range(1, ws.max_column + 1):
+        if str(ws.cell(row=hdr_row - 1, column=c).value or "") == "Table":
+            table_col = c
+            break
+
+    return {
+        "hdr_row": hdr_row,
+        "data_start": hdr_row + 1,
+        "sys_bases": sys_bases,
+        "total_col": total_col,
+        "table_col": table_col or 2,
+    }
+
+
 def flip_include(path: str, out_path: str, count: int) -> int:
     """
-    Set the first ``count`` MAIN ``Include?`` cells that currently hold "Y"
-    to "N".  Returns how many were flipped.
+    Set the first ``count`` MAIN Include? cells that currently hold "Y" to "N".
+
+    Blank Include? cells are skipped, not filled: a blank means the table has
+    no data in that system, and writing "N" there would misrepresent the sheet
+    (as well as changing nothing, since the cell already contributes zero).
     """
     wb = openpyxl.load_workbook(path)
     ws = wb["MAIN"]
-
-    header_row = None
-    include_col = None
-    for row in ws.iter_rows(min_row=1, max_row=20):
-        for cell in row:
-            if isinstance(cell.value, str) and cell.value.strip() == "Include?":
-                header_row, include_col = cell.row, cell.column
-                break
-        if include_col:
-            break
-    if not include_col:
-        raise RuntimeError("Could not locate the Include? column on MAIN")
+    hdr = _main_geometry(ws)
 
     flipped = 0
-    for r in range(header_row + 1, ws.max_row + 1):
+    for r in range(hdr["data_start"], ws.max_row + 1):
+        if str(ws.cell(row=r, column=hdr["table_col"]).value).strip().upper() == "TOTAL":
+            break
+        for base in hdr["sys_bases"]:
+            if flipped >= count:
+                break
+            cell = ws.cell(row=r, column=base + 2)
+            if isinstance(cell.value, str) and cell.value.strip().upper() == "Y":
+                cell.value = "N"
+                flipped += 1
         if flipped >= count:
             break
-        cell = ws.cell(row=r, column=include_col)
-        if isinstance(cell.value, str) and cell.value.strip().upper() == "Y":
-            cell.value = "N"
-            flipped += 1
 
+    wb.calculation.fullCalcOnLoad = True
     wb.save(out_path)
     wb.close()
     return flipped
@@ -259,11 +317,7 @@ def main() -> int:
         a, b = before.get(key), after.get(key)
         return isinstance(a, (int, float)) and isinstance(b, (int, float)) and a != b
 
-    dynamic_keys = [
-        "hw_total_source_mb", "hw_total_target_mb",
-        "summary_included_gb", "summary_tables_included",
-        "summary_tables_excluded",
-    ]
+    dynamic_keys = ["main_included_mb", "include_y", "include_n"]
     changed = [k for k in dynamic_keys if moved(k)]
 
     print("\n=== VERDICT ===")
@@ -272,7 +326,7 @@ def main() -> int:
     print(f"  formula errors (flipped)   : {len(flip_errors)}")
     print(f"  totals that responded      : {changed or 'NONE'}")
 
-    ok_dynamic = len(changed) >= 3
+    ok_dynamic = len(changed) >= 2 and moved("main_included_mb")
     if ok_errors and ok_dynamic:
         print("  RESULT: PASS — workbook recalculates cleanly and is fully dynamic")
         return 0

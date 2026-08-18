@@ -15,10 +15,12 @@ The script is engagement-agnostic: it discovers sidclnt values, categories,
 years, and system counts from the data — nothing is hardcoded.
 
 Principles:
-  - Deterministic collision / conflict detection in Python (data rows only).
-  - All downstream calculations (sizing, HANA target, summaries) are Excel
-    formulas — never Python-computed literals written to cells.
+  - Deterministic detection and pivoting in Python (data rows only).
+  - Every calculated cell is an Excel formula — never a Python-computed
+    literal written to a cell.
   - The workbook recalculates correctly when a user edits Include? in MAIN.
+
+Sheets produced: COVER -> SYSTEMS -> MAIN_DECISION -> MAIN.
 """
 
 import argparse
@@ -33,17 +35,19 @@ if _HERE not in sys.path:
 
 import openpyxl
 
-from dmlt_calc import detect_collisions, detect_conflicts   # shared calculation engine
+from sheets.cover         import build as build_cover
+from sheets.systems       import build as build_systems
+from sheets.main_decision import build as build_main_decision
+from sheets.main_sheet    import build as build_main
 
-from sheets.cover          import build as build_cover
-from sheets.systems        import build as build_systems
-from sheets.main_sheet     import build as build_main
-from sheets.collisions     import build as build_collisions
-from sheets.conflicts      import build as build_conflicts
-from sheets.growth         import build as build_growth
-from sheets.hardware_sizing import build as build_hardware_sizing
-from sheets.summary        import build as build_summary
-from sheets.dashboard      import build as build_dashboard
+# NOTE — sheets beyond MAIN are intentionally not built in this pass.
+# sheets/collisions.py, conflicts.py, growth.py, hardware_sizing.py,
+# summary.py and dashboard.py are still on disk, but they read MAIN through
+# the old flat layout (one system column, one Include? column, one Target MB
+# column).  The pivoted MAIN has none of those, so wiring them up now would
+# produce a sizing model that is quietly wrong.  The sizing model is being
+# redesigned against the pivoted MAIN in the next pass; these builders get
+# reconnected there.
 
 
 # ---------------------------------------------------------------------------
@@ -84,112 +88,87 @@ def load_sections(paths: dict) -> dict:
 # Main generator
 # ---------------------------------------------------------------------------
 
-def generate_report(sections: dict, out_path: str) -> str:
+def generate_report(sections: dict, out_path: str,
+                    base_system: str = None,
+                    decisions: dict = None) -> str:
     """
-    Build the 9-sheet DMLT workbook from the five section data arrays.
+    Build the COVER / SYSTEMS / MAIN_DECISION / MAIN workbook.
 
     Parameters
     ----------
     sections : dict
         Keys: master, growth, system, org, nriv — each a list of row dicts.
+        Only master and system are read in this pass; growth, org and nriv are
+        accepted so the call signature stays stable for the next pass.
     out_path : str
-        Destination .xlsx file path (parent directory must exist or will
-        be created).
+        Destination .xlsx file path (parent directory is created if needed).
+    base_system : str, optional
+        The sidclnt chosen as the migration shell.  Labelled "(base)" on
+        MAIN_DECISION.  This is a consultant decision, not something derived
+        from volume, so the caller supplies it; the agent asks the user and
+        passes it through.  Unknown or omitted values simply mean no row is
+        marked.
+    decisions : dict, optional
+        {sidclnt: {category: "Y"|"N"}} seed for the decision grid.  Anything
+        not named defaults to "Y".  Written into MAIN's Include? cells too, so
+        the two sheets agree at generation time.
 
     Returns
     -------
     str — absolute path of the written .xlsx file.
     """
-    master_data  = sections["master"]
-    growth_data  = sections["growth"]
-    system_data  = sections["system"]
-    org_data     = sections["org"]
-    nriv_data    = sections["nriv"]
+    master_data = sections["master"]
+    system_data = sections["system"]
 
-    # Derived metadata
-    sidcltns = sorted({r["sidclnt"] for r in system_data})
+    # Systems come from the system section when present, else from master —
+    # either way the count is discovered, never assumed.
+    sidcltns = sorted({r["sidclnt"] for r in system_data}) or sorted(
+        {r.get("sidclnt", "") for r in master_data if r.get("sidclnt")}
+    )
     categories = sorted({
-        r.get("category", "") or ""
+        str(r.get("category") or "").strip()
         for r in master_data
-        if r.get("agg_level") == "T" and r.get("category")
+        if str(r.get("agg_level", "")).upper() == "T" and r.get("category")
     })
+
+    if base_system and base_system not in sidcltns:
+        print(f"[WARN] base system {base_system!r} is not one of {sidcltns} — "
+              f"no row will be marked (base).")
 
     run_meta = {
         "sidcltns":           sidcltns,
         "num_source_systems": len(sidcltns),
     }
 
-    # Pre-compute collisions and conflicts for SUMMARY / DASHBOARD
-    collisions = detect_collisions(org_data)
-    conflicts  = detect_conflicts(nriv_data)
-
     # ── Create workbook ────────────────────────────────────────────────────
-    # We use standard (non-write_only) mode so all sheets can be
-    # styled and cross-referenced.  The MAIN sheet uses an optimised
-    # bulk-append path internally.
     wb = openpyxl.Workbook()
-
-    # Remove the default sheet
-    default_ws = wb.active
-    wb.remove(default_ws)
+    wb.remove(wb.active)
 
     # ── Sheet 1: COVER ─────────────────────────────────────────────────────
     ws_cover = wb.create_sheet("COVER")
-    cover_refs = build_cover(ws_cover, run_meta)
+    build_cover(ws_cover, run_meta)
 
     # ── Sheet 2: SYSTEMS ───────────────────────────────────────────────────
     ws_systems = wb.create_sheet("SYSTEMS")
     build_systems(ws_systems, system_data)
 
-    # ── Sheet 3: MAIN ──────────────────────────────────────────────────────
+    # ── Sheet 3: MAIN_DECISION ─────────────────────────────────────────────
+    ws_dec = wb.create_sheet("MAIN_DECISION")
+    dec_refs = build_main_decision(
+        ws_dec,
+        sidcltns=sidcltns,
+        categories=categories,
+        decisions=decisions,
+        base_system=base_system,
+    )
+
+    # ── Sheet 4: MAIN ──────────────────────────────────────────────────────
     ws_main = wb.create_sheet("MAIN")
-    main_refs = build_main(ws_main, master_data)
-
-    # ── Sheet 4: COLLISIONS ────────────────────────────────────────────────
-    ws_coll = wb.create_sheet("COLLISIONS")
-    collision_count = build_collisions(ws_coll, org_data)
-
-    # ── Sheet 5: CONFLICTS ─────────────────────────────────────────────────
-    ws_conf = wb.create_sheet("CONFLICTS")
-    conflict_count = build_conflicts(ws_conf, nriv_data)
-
-    # ── Sheet 6: GROWTH ────────────────────────────────────────────────────
-    ws_growth = wb.create_sheet("GROWTH")
-    build_growth(ws_growth, growth_data)
-
-    # ── Sheet 7: HARDWARE_SIZING ───────────────────────────────────────────
-    # The compression-factor address comes back from build_cover() rather than
-    # being hardcoded, so re-ordering the COVER details cannot silently point
-    # the sizing division at the wrong cell.
-    ws_hw = wb.create_sheet("HARDWARE_SIZING")
-    hw_refs = build_hardware_sizing(
-        ws_hw,
-        categories=categories,
-        main_refs=main_refs,
-        compression_cell=cover_refs["compression_cell"],
-    )
-
-    # ── Sheet 8: SUMMARY ───────────────────────────────────────────────────
-    ws_sum = wb.create_sheet("SUMMARY")
-    build_summary(
-        ws_sum,
-        main_refs=main_refs,
-        hw_refs=hw_refs,
-        collisions=collisions,
-        conflicts=conflicts,
-        system_data=system_data,
-        categories=categories,
-    )
-
-    # ── Sheet 9: DASHBOARD ─────────────────────────────────────────────────
-    ws_dash = wb.create_sheet("DASHBOARD")
-    build_dashboard(
-        ws_dash,
-        system_data=system_data,
-        hw_refs=hw_refs,
-        collision_count=collision_count,
-        conflict_count=conflict_count,
-        main_refs=main_refs,
+    main_refs = build_main(
+        ws_main,
+        master_data=master_data,
+        sidcltns=sidcltns,
+        decisions=decisions,
     )
 
     # ── Force recalculation on open ────────────────────────────────────────
@@ -204,11 +183,14 @@ def generate_report(sections: dict, out_path: str) -> str:
     os.makedirs(os.path.dirname(out_path) or ".", exist_ok=True)
     wb.save(out_path)
     print(f"[OK] Workbook written: {out_path}")
-    print(f"     Sheets   : {[s.title for s in wb.worksheets]}")
-    print(f"     Systems  : {sidcltns}")
+    print(f"     Sheets    : {[w.title for w in wb.worksheets]}")
+    print(f"     Systems   : {sidcltns}")
     print(f"     Categories: {categories}")
-    print(f"     Collisions: {collision_count}")
-    print(f"     Conflicts : {conflict_count}")
+    print(f"     Base      : {base_system or '(none set)'}")
+    print(f"     Tables    : {main_refs['table_count']:,} "
+          f"(MAIN rows {main_refs['data_start_row']}:{main_refs['data_end_row']})")
+    print(f"     Grid      : {len(dec_refs['sidcltns'])} systems "
+          f"x {len(dec_refs['categories'])} categories")
 
     return out_path
 
@@ -228,6 +210,9 @@ def _cli():
     parser.add_argument("--nriv",    required=True, help="Path to nriv JSON file")
     parser.add_argument("--out",     default="output/dmlt_report.xlsx",
                         help="Output .xlsx path (default: output/dmlt_report.xlsx)")
+    parser.add_argument("--base-system", default=None, metavar="SIDCLNT",
+                        help="System chosen as the migration shell; labelled "
+                             "'(base)' on MAIN_DECISION (e.g. RQ1_500)")
     args = parser.parse_args()
 
     paths = {
@@ -243,7 +228,7 @@ def _cli():
     for sec, data in sections.items():
         print(f"       {sec}: {len(data):,} rows")
 
-    generate_report(sections, args.out)
+    generate_report(sections, args.out, base_system=args.base_system)
 
 
 if __name__ == "__main__":
